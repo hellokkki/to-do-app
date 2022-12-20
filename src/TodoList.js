@@ -6,11 +6,22 @@ import TodoListItem from './TodoListItem';
 function TodoList() {
   const [todos, setTodos] = useState([]);
 
+  const id = () => {
+    return Math.floor(Math.random() * 10000);
+  }
+
 
   const addTodo = value => {
-    const updatedList = [...todos, value];
+  let newList = [...todos, value] 
+ 
+  setTodos(newList);
+}
+  
 
-    setTodos(updatedList);
+  const removeTodo = key => { 
+    setTodos(prevState => {
+      prevState.filter(todo => todo !== key);
+    })
   }
 
   return (
@@ -19,7 +30,8 @@ function TodoList() {
      <TodoForm onSubmit={addTodo}/>
      {
       todos.map(todo => (
-        <TodoListItem key={Math.floor(Math.random() * 1000)}>{todo}</TodoListItem>
+        <TodoListItem key={id()}
+        onClick={(e) => removeTodo(e)}>{todo}</TodoListItem>
       ))
      }
     </div>

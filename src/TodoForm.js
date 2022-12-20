@@ -15,7 +15,7 @@ const useInput = (inititalValue) => {
   }
 }
 
-const TodoForm = ({ onSubmit }) => {
+ const TodoForm = ({ onSubmit }) => {
   
   const { value, onChange } = useInput('')
 

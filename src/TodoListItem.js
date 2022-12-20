@@ -1,19 +1,11 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 
-const TodoListItem = props => {
-const [todo, setTodo] = useState('')
-    
-
-  const removeTodo = id => {
-    setTodo(prevState => {
-        prevState.filter(todo => todo.id !== id);
-    })
-  }
-
+const TodoListItem = ({ children, onRemove }) => {
+  
   return (
-    <div className='todo-list-item' onClick={removeTodo}>
-      <p>{props.children}</p>
+    <div className='todo-list-item' onClick={onRemove}>
+      <p>{children}</p>
     </div>
   )
 }
