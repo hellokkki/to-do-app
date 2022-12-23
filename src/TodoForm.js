@@ -22,6 +22,7 @@ const useInput = (inititalValue) => {
  const handleSubmit = e => {
   e.preventDefault();
   onSubmit(value)
+  console.log(e)
  }
 
   return (
