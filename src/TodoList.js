@@ -2,23 +2,28 @@
 import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import TodoListItem from './TodoListItem';
+import { useId } from "react-id-generator";
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
+  const [id] = useId();
 
   const addTodo = value => {
+   
   // const newList = [...todos, value] 
+  const todo = {
+     text: value,
+     id: id + `${value}`
+  }
  
-  setTodos(todos => [...todos, value]);
+  setTodos([...todos, todo]);
 }
   
 
-  const removeTodo = e => { 
-    const elementToRemove = e.target;
+  const removeTodo = ({todo}) => { 
     console.log('should work')
-    // const newList = todos.filter( todo => todo !== elementToRemove );
-    // return setTodos(newList)
-    return setTodos(todos => todos.filter( todo => todo !== elementToRemove ))
+    console.log(todo.text)
+    return setTodos(todos => todos.filter((todo)  => todo !== todo.text ))
   }
 
   return (
@@ -26,10 +31,13 @@ function TodoList() {
      <h1>today's todos?</h1>
      <TodoForm onSubmit={addTodo}/>
      {
-      todos.map((todo, index) => (
-        <TodoListItem key={index.toString()}
-        onClick={e => removeTodo(e)}
-        >{todo}</TodoListItem>
+      todos.map(todo => (
+        <TodoListItem
+        key={todo.id}
+        onClick={() => removeTodo({todo}) }
+        >
+        {todo.text}
+        </TodoListItem>
       ))
      }
     </div>
