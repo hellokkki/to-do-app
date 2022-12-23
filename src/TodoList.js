@@ -10,7 +10,6 @@ function TodoList() {
 
   const addTodo = value => {
    
-  // const newList = [...todos, value] 
   const todo = {
      text: value,
      id: id + `${value}`
@@ -21,9 +20,8 @@ function TodoList() {
   
 
   const removeTodo = ({todo}) => { 
-    console.log('should work')
-    console.log(todo.text)
-    return setTodos(todos => todos.filter((todo)  => todo !== todo.text ))
+    const elementToRemove = todo.id
+    return setTodos(todos => todos.filter( todo  => todo.id !== elementToRemove ))
   }
 
   return (
