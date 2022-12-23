@@ -18,7 +18,7 @@ function TodoList() {
     console.log('should work')
     // const newList = todos.filter( todo => todo !== elementToRemove );
     // return setTodos(newList)
-    return setTodos(todos => [...todos.filter( todo => todo !== elementToRemove )])
+    return setTodos(todos => todos.filter( todo => todo !== elementToRemove ))
   }
 
   return (
