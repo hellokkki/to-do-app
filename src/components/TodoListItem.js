@@ -4,7 +4,7 @@ import React from 'react'
 const TodoListItem = ({ children, ...props }) => {
   
   return (
-    <div className='todo-list-item' onClick={props.onClick}>
+    <div className='todo-display--list__item' onClick={props.onClick}>
     {children}
     </div>
   )

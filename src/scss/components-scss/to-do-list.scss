@@ -1,0 +1,43 @@
+
+.todo-display {
+    
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  
+    width: 20rem;
+    height: 100vh;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    position: relative;
+
+    &--form {
+       position: absolute;
+       top: 4rem;
+        width: 18rem;
+        padding: 1rem 3rem 1rem 3rem;
+        background-color: aliceblue;
+    }
+
+    &--list {
+        width: 30rem;
+        background-color: aliceblue;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+
+        &__item{
+            padding: 1rem;
+            font-size: 2.2rem;
+            font-weight: 600;
+
+        }
+    }
+  }
+
+
+  

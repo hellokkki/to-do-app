@@ -1,8 +1,10 @@
 
 import React from 'react';
 
-import TodoList from './TodoList';
-import './styles.css';
+import TodoList from './components/TodoList';
+import './scss/styles.css';
+import './main.scss'
+import 'normalize.css'
 
 const App = () => {
 

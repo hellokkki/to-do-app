@@ -37,7 +37,7 @@ const useInput = (inititalValue) => {
        className='todo-input'
        onChange={onChange}
        />
-       <button className='todo-button'></button>
+       <button className='todo-button'>add todo</button>
       </form>
     </div>
   )

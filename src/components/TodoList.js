@@ -16,6 +16,7 @@ function TodoList() {
   }
  
   setTodos([...todos, todo]);
+  localStorage.setItem(`${todo}`, `${todo.text}`)
 }
   
 
@@ -25,10 +26,13 @@ function TodoList() {
   }
 
   return (
-    <div>
-     <h1>today's todos?</h1>
+    <div className='todo-display'>
+        <div className='todo-display--form'> 
+      <h1>today's todos?</h1>
      <TodoForm onSubmit={addTodo}/>
-     {
+     </div>
+     <div className='todo-display--list'>
+      {
       todos.map(todo => (
         <TodoListItem
         key={todo.id}
@@ -38,6 +42,7 @@ function TodoList() {
         </TodoListItem>
       ))
      }
+     </div>
     </div>
   )
 }
