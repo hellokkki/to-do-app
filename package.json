@@ -2,7 +2,7 @@
   "name": "to-do",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://hellokkki.to-do.io/",
+  "homepage": "https://hellokkki.github.io/to-do-app/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
