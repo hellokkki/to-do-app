@@ -1,12 +1,18 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoForm from './TodoForm';
 import TodoListItem from './TodoListItem';
 import { useId } from "react-id-generator";
 
+
+const store = window.localStorage;
+
 function TodoList() {
   const [todos, setTodos] = useState([]);
   const [id] = useId();
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
 
   const addTodo = value => {
    
@@ -14,10 +20,10 @@ function TodoList() {
      text: value,
      id: id + `${value}`
   }
- 
+
   setTodos([...todos, todo]);
-  localStorage.setItem(`${todo}`, `${todo.text}`)
 }
+
   
 
   const removeTodo = ({todo}) => { 
