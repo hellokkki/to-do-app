@@ -5,13 +5,15 @@ import TodoListItem from './TodoListItem';
 import { useId } from "react-id-generator";
 
 
-const store = window.localStorage;
+
 
 function TodoList() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+   return JSON.parse(window.localStorage.getItem('todos') || '')
+});
   const [id] = useId();
   useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos))
+    window.localStorage.setItem('todos', JSON.stringify(todos))
   }, [todos])
 
   const addTodo = value => {
