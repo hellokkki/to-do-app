@@ -1,0 +1,82 @@
+.todo-form {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-flow: column nowrap;
+   gap: .7rem;
+
+   font-family: 'Source Sans Pro';
+
+   h1 {
+    padding-left: 7rem;
+   }
+
+   &--input {
+    width: 24rem;
+    height: 3.6rem;
+
+    border-radius: 2rem;
+    border: 1px #f0f8ff;
+
+    text-align: center;
+    font-size: 2.4rem;
+
+    transition: all .4s ease-in;
+
+
+    &:focus {
+        outline: none;
+        box-shadow: rgba($color: #000000, $alpha: .4);
+
+    }
+   }
+
+   &--button {
+        display: inline-block;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all .5s ease-in;
+        border: none;
+
+        background-color: #f5cff4;
+
+
+        width: 24rem;
+        height: 2.4rem;
+        border-radius: 3rem;
+    
+        &:active {
+            transform: translateY(-1.2rem);
+        }
+    
+   }
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-flow: column nowrap;
+
+
+    h1 {
+        font-size: 3.6rem;
+    }
+}
+
+:focus::-webkit-input-placeholder {
+    color: transparent
+  }
+  
+  :focus::-moz-placeholder {
+    color: transparent
+  }
+  
+  :focus:-moz-placeholder {
+    color: transparent
+  }
+  
+  :focus:-ms-input-placeholder {
+    color: transparent
+  }

@@ -1,4 +1,21 @@
 
+.App {
+    width: 60rem;
+    height: 100vh;
+    background-color: aliceblue;
+
+  
+    margin: 0 auto;
+    padding: 0;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    font-family: 'Source Sans Pro';
+  }
+
 .todo-display {
     
 
@@ -9,9 +26,9 @@
   
     width: 20rem;
     height: 100vh;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
     position: relative;
+
+    padding-left: 3rem;
 
     &--form {
        position: absolute;
@@ -29,15 +46,35 @@
         justify-content: center;
         align-items: center;
 
-
-        &__item{
-            padding: 1rem;
-            font-size: 2.2rem;
-            font-weight: 600;
-
-        }
     }
   }
 
+.todo-item {
+    width: 22rem;
+    height: 3.4rem;
+    min-height: fit-content;
+  
+
+    border-radius: 6.5rem;
+    border: 1px solid #f0f8ff;
+
+    background-color: #f5cff4;
+ 
+    text-align: center;
+     font-size: 2.4rem;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding-top: .3rem;
+    
+
+  &--content {
+    
+  }
+
+  &--delete-icon {
+   text-align: center;
+  }
+}
 
   

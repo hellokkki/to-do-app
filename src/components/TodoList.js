@@ -5,18 +5,25 @@ import TodoListItem from './TodoListItem';
 import { useId } from "react-id-generator";
 
 
-
-
 function TodoList() {
   const [todos, setTodos] = useState(() => {
-   return JSON.parse(window.localStorage.getItem('todos') || '')
+    let value;
+    try { 
+      value = JSON.parse(window.localStorage.getItem('todos') || '')
+    } catch(error) {
+      alert('something is realy wrong')
+    }
+   return value;
 });
+
   const [id] = useId();
   useEffect(() => {
     window.localStorage.setItem('todos', JSON.stringify(todos))
   }, [todos])
 
   const addTodo = value => {
+
+    if (value === '') return;
    
   const todo = {
      text: value,
@@ -36,7 +43,6 @@ function TodoList() {
   return (
     <div className='todo-display'>
         <div className='todo-display--form'> 
-      <h1>today's todos?</h1>
      <TodoForm onSubmit={addTodo}/>
      </div>
      <div className='todo-display--list'>

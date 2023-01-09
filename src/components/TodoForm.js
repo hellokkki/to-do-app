@@ -27,17 +27,18 @@ const useInput = (inititalValue) => {
 
   return (
     handleSubmit,
-    <div>
+    <div className='form-container'>
       <form className='todo-form' onSubmit={handleSubmit}>
+      <h1>today's todos?</h1>
        <input 
        type='text'
-       placeholder='Add a todo'
+       placeholder='type me!'
        value={value}
        name='todo'
-       className='todo-input'
+       className='todo-form--input'
        onChange={onChange}
        />
-       <button className='todo-button'>add todo</button>
+       <button className='todo-form--button'>add todo</button>
       </form>
     </div>
   )
