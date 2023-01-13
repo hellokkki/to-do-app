@@ -23,6 +23,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    gap: 4rem;
   
     width: 20rem;
     height: 100vh;
@@ -30,16 +31,20 @@
 
     padding-left: 3rem;
 
+
     &--form {
-       position: absolute;
-       top: 4rem;
         width: 18rem;
         padding: 1rem 3rem 1rem 3rem;
         background-color: aliceblue;
     }
 
     &--list {
+       
+
         width: 30rem;
+        min-height: 8rem;
+        height: 30rem;
+        border: 1px solid black;
         background-color: aliceblue;
         display: flex;
         flex-flow: column nowrap;
@@ -69,7 +74,7 @@
     
 
   &--content {
-    
+    font-weight: 400;
   }
 
   &--delete-icon {

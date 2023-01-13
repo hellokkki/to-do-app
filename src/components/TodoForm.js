@@ -9,20 +9,26 @@ const useInput = (inititalValue) => {
     setValue(e.target.value);
   }
 
+  const clearInput = () => {
+    setValue('');
+  }
+
   return {
     value,
     onChange,
+    clearInput
   }
 }
 
  const TodoForm = ({ onSubmit }) => {
   
-  const { value, onChange } = useInput('')
+  const { value, onChange, clearInput } = useInput('')
 
  const handleSubmit = e => {
   e.preventDefault();
   onSubmit(value)
   console.log(e)
+  clearInput();
  }
 
   return (

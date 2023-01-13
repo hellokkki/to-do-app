@@ -3,9 +3,12 @@ import React, { useState, useEffect } from 'react';
 import TodoForm from './TodoForm';
 import TodoListItem from './TodoListItem';
 import { useId } from "react-id-generator";
+import CustomScroll from 'react-custom-scroll';
 
 
 function TodoList() {
+
+  const [id] = useId();
   const [todos, setTodos] = useState(() => {
     let value;
     try { 
@@ -16,7 +19,7 @@ function TodoList() {
    return value;
 });
 
-  const [id] = useId();
+
   useEffect(() => {
     window.localStorage.setItem('todos', JSON.stringify(todos))
   }, [todos])
@@ -45,7 +48,12 @@ function TodoList() {
         <div className='todo-display--form'> 
      <TodoForm onSubmit={addTodo}/>
      </div>
-     <div className='todo-display--list'>
+     <div 
+       className='todo-display--list'
+      >
+      <CustomScroll
+     heightRelativeToParent='calc(100% - 1rem)'
+     >
       {
       todos.map(todo => (
         <TodoListItem
@@ -56,9 +64,12 @@ function TodoList() {
         </TodoListItem>
       ))
      }
+     </CustomScroll>
      </div>
+   
     </div>
   )
 }
 
 export default TodoList
+
