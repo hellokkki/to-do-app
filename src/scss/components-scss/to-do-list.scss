@@ -55,10 +55,9 @@
   }
 
 .todo-item {
-    width: 22rem;
-    height: 3.4rem;
+    width: 25rem;
     min-height: fit-content;
-  
+    height: 6rem ;
 
     border-radius: 6.5rem;
     border: 1px solid #f0f8ff;
@@ -71,10 +70,16 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     padding-top: .3rem;
-    
+
+     > div.todo-item--content,
+     > div.todo-item--delete-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
   &--content {
-    font-weight: 400;
+   font-weight: 500;
   }
 
   &--delete-icon {
